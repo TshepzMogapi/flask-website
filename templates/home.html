@@ -1,17 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Flask Webiste</title>
   </head>
   <body>
-    {% extends "template.html" %}
-    {% block content %}
-    
-    <h1>A simple framework for building complex web applications.</h1>
-    <p> Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.</p>
-    
-    {% endblock %}
+    <div class="container">
+      {% extends "template.html" %} {% block content %}
+
+      <h1>A simple framework for building complex web applications.</h1>
+      <p>
+        Flask is a lightweight WSGI web application framework. It is designed to
+        make getting started quick and easy, with the ability to scale up to
+        complex applications.
+      </p>
+
+      
+      {% endblock %}
+    </div>
   </body>
 </html>
