@@ -24,10 +24,20 @@ def features():
 def upload_file():
    return render_template('upload.html')
 
-
-@app.route('/api/bot')
+@app.route('/api/bot', methods=['POST'])
 def bot():
-   return 'Hello I am going to be a bot'
+    print('incoming_msg')
+    incoming_msg = request.values.get('Body', '')
+    print(incoming_msg)
+    resp = MessagingResponse()
+    msg = resp.message()
+    if 'Hi' in incoming_msg:
+      msg.body('Hello I am going to help you today.')
+    
+    if 'Help' in incoming_msg:
+      msg.body('I am getting you some help.')
+
+    return  str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)
