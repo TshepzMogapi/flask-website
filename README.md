@@ -1,13 +1,24 @@
-#  Running the app
+# Running the app
 
 ## Prerequisites
-  - Virtual Environment - pip install virtualenv
-  - virtualenv NAME OF Environment(env to run app later)
-  -  pip install flask
 
-## To run the app 
+- create and activate environment
+- pip install -r requirements.txt
+
+## To run the app
 
 ```sh
-$ source bin/activate
-$ python main.py 
+export FLASK_APP="src/main.py"
+export POSTGRES_URL="127.0.0.1:5432"
+export POSTGRES_DB="NAME _OF_DB"
+export POSTGRES_USER="DB_USER"
+export POSTGRES_PASSWORD="DB_PASS"
+
+
+
+flask db init
+flask db migrate
+flask db upgrade
+
+flask run
 ```
